@@ -1,0 +1,27 @@
+{
+  "name": "config-parse",
+  "version": "1.0.0",
+  "description": "config-parse",
+  "private": true,
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-flatmap": "^1.0.2",
+    "gulp-json-to-yaml": "^0.0.2",
+    "gulp-load-plugins": "^2.0.7",
+    "gulp-replace": "^1.1.3",
+    "markdown-json": "^1.6.1",
+    "prettier": "2.5.1",
+    "through2": "^4.0.2"
+  },
+  "scripts": {
+    "build": "npm run toJSON && npm run generate && npm run toYAML && npm run lint:yaml && npm run replace && npm run copyfile",
+    "toJSON": "gulp tojson",
+    "generate": "gulp generate",
+    "lint:json": "prettier --write \"./generate/**/*.json\"",
+    "lint:yaml": "prettier --write --prose-wrap never \"./build/**/*.yaml\"",
+    "toYAML": "gulp toyaml",
+    "replace": "gulp replace",
+    "copyfile": "gulp copyDefault",
+    "prepare": "gulp prepare"
+  }
+}
